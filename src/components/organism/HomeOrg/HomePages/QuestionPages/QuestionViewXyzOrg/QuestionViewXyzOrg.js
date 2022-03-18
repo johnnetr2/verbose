@@ -21,6 +21,7 @@ import DimLeftArrow from '../../../../../../assets/Icons/DimLeftArrow.svg'
 import DimRightArrow from '../../../../../../assets/Icons/DimRightArrow.svg'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { SettingsRemoteRounded } from '@mui/icons-material';
+import MarkLatex from '../MarkLatex';
 // import CustomizedSnackbars from '../../../../../atom/Snackbar/snackbar'
 
 const QuestionViewXyzOrg = () => {
@@ -248,7 +249,7 @@ const QuestionViewXyzOrg = () => {
                                 </Typography> */}
 
                                 <Typography variant="h6" component='h6' style={{ fontSize: '0.75rem', fontWeight: '600' }}>
-                                    {question?.question?.questionStatement}
+                                    <MarkLatex content={question?.question?.questionStatement} />
                                 </Typography>
 
                             </Box>
@@ -273,7 +274,9 @@ const QuestionViewXyzOrg = () => {
                                                 <Box mt={2} ml={5}>
                                                     {item.type == 'image' ? (<img className={classes.piechart_size} src={QuestionOption} alt="" />)
                                                         :
-                                                        (<Typography>{item.value}</Typography>)
+                                                        (<Typography>
+                                                            <MarkLatex content={item.value} />
+                                                            </Typography>)
                                                     }
                                                 </Box>
 
@@ -289,6 +292,7 @@ const QuestionViewXyzOrg = () => {
                                         <Typography variant='h5' component="h5" style={{ fontSize: '.75rem', fontWeight: '600', marginTop: 20 }}>Förklaring:</Typography>
                                         <Typography variant="body1" component="div" style={{ fontSize: '.75rem', fontWeight: '500', marginTop: 10 }}>
                                             {question.answer.answer}
+                                            <MarkLatex content={question.answer.answer} />
                                         </Typography>
                                     </Box>
                                     <Box mt={2}>

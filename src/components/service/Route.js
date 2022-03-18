@@ -11,7 +11,6 @@ export const instance2 = axios.create({
     },
 });
 
-
 export const EndPoints = {
     SignUp: '/auth/signup',
     Login: '/auth/login',
